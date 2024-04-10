@@ -23,3 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 src/Backend/creds.py
+Backend/__pycache__/creds.cpython-310.pyc
+Backend/tempCodeRunnerFile.py
+.eslintrc.cjs
+.eslintrc.cjs
+.eslintrc.cjs
