@@ -14,21 +14,21 @@ const MovieCard = ({ movieData }) => {
   return (
     <div>
       {/* Movie card that will be populated using TMDb API */}
-      <Card className="py-6 max-w-[500px] max-h-[500px]">
+      <Card className="py-8 w-[400px] max-h-[600px]">
         <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
           <p className="text-large uppercase font-bold font-roboto">{movieData.title}</p>
           <small className="text-default-500">{movieData.genre_id}</small>
         </CardHeader>
-        <CardBody className="overflow-visible py-2">
+        <CardBody className="overflow-visible flex justify-center items-center">
           <Image
             alt="Card background"
             className="object-cover rounded-xl"
             src={`//image.tmdb.org/t/p/w500/${movieData.poster_path}`}
             width={270}
           />
-          <Popover placement="center">
+          <Popover placement="top">
           <PopoverTrigger>
-            <Button className=' font-roboto size-32' >Movie Overview</Button>
+            <Button className=' font-roboto size-32 mt-4 bg-green-500 text-white ' >Movie Overview</Button>
           </PopoverTrigger>
           <PopoverContent className=' w-[240px]'>
             <div className="px-1 py-2 w-full">

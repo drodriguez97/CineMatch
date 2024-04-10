@@ -22,11 +22,11 @@ const App = () => {
   }, []);
 
   return (
-    <main>
+
       <div>
         <Header />
         {/* Hot Movies List */}
-        <p className="text-left text-xl font-roboto text-slate-800 font-bold mt-10 mb-2 ml-20 decoration-solid ">
+        <p className="text-center text-3xl font-roboto text-green-500 font-bold mt-10 mb-5 ml-20 decoration-solid ">
           Hot New Releases
         </p>
         <div className="flex justify-center items-center">
@@ -38,7 +38,6 @@ const App = () => {
           ))}
         </div>
       </div>
-    </main>
   );
 };
 
