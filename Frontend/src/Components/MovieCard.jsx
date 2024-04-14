@@ -8,15 +8,13 @@ const MovieCard = ({ movieData }) => {
   if (!movieData) {
     return null;
         }
-      
-      console.log(movieData)
 
   return (
     <div>
       {/* Movie card that will be populated using TMDb API */}
       <Card className="py-8 w-[400px] max-h-[600px]">
         <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-          <p className="text-large uppercase font-bold font-roboto">{movieData.title}</p>
+          <p className="text-large uppercase font-bold font-roboto  text-green-500">{movieData.title}</p>
           <small className="text-default-500">{movieData.genre_id}</small>
         </CardHeader>
         <CardBody className="overflow-visible flex justify-center items-center">
