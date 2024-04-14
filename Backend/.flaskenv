@@ -1,0 +1,2 @@
+FLASK_APP=TMDb_routes.py
+FLASK_ENV=development

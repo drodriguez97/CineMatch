@@ -9,7 +9,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <NextUIProvider>
       <body className="min-h-screen light bg-white">
         <App />
-      </body>
+      </body >
     </NextUIProvider>
   </React.StrictMode>,
 )
