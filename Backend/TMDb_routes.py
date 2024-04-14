@@ -1,7 +1,8 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 from flask_cors import CORS, cross_origin
 import requests
 import creds
+import random
 
 app = Flask(__name__)
 cors = CORS(app)
@@ -64,7 +65,32 @@ def get_popular_movies():
         return jsonify({"error": "Failed to fetch popular movies."}), response.status_code
     
     
-if __name__ == '__main__':
-    app.run()
- 
- 
+@app.route('/random_movie', methods=['GET'])
+@cross_origin()
+def get_random_movie():
+    url="https://api.themoviedb.org/3/discover/movie"
+    genre_id = request.args.get('genre_id')
+    year = request.args.get('year')
+    
+    params = {
+        "api_key": creds.API_KEY,
+        "with_genres": genre_id,
+        "primary_release_year": year
+    }
+    
+    response = requests.get(url, params=params)
+    
+    if response.status_code == 200:    
+        data = response.json()
+        results = data.get('results', [])
+        if results:
+            random_movie = random.choice(results)
+            rand_movie_info = {
+                "title": random_movie.get('title'),
+                "overview": random_movie.get('overview'),
+                "poster_path": random_movie.get('poster_path'),
+                "release_date": random_movie.get('release_date')
+            }
+        return jsonify(rand_movie_info)
+    else:
+        return jsonify({"error": "Failed to fetch random movie."}), response.status_code
