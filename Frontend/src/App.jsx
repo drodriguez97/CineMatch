@@ -7,7 +7,7 @@ import PickedMovieCard from "./Components/PickedMovieCard";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import MovieCard from "./Components/MovieCard";
-// built
+
 const App = () => {
   const [movieData, setMovieData] = useState([]);
   const [randomMovieData, setRandomMovieData] = useState();
